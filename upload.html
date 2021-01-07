@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+
+    <title>Ungah Data</title>
+
+
+  </head>
+  <body class="bg-login">
+
+    <nav class="navbar navbar-light fixed-top bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="dashboard.html">Dashboard</a>
+
+              <div class="d-flex">
+
+                <div class="dropdown">
+
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Hi, Developer
+                </button>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="upload.html">Upload</a></li>
+                  <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                </ul>
+              </div>
+
+
+              </div>
+
+            </div>
+          </nav>
+
+    <div class="container-fluid">
+    <!-- Content here -->
+
+    
+      <div class="row">
+        <div class="col-md-8 offset-md-2 wp-upload text-center">         
+            
+            <h1>Nakertrans</h1>
+            
+            <div class="date">
+              <span class="day">02</span>
+              <span class="day">| </span>
+
+              <div class="wp-date-right">
+              <span class="year">2018</span>
+              <span class="month">Oktober</span>
+              </div>
+
+            </div>
+
+            <div class="form-file">
+            <form>
+              
+              <div class="d-grid gap-2">
+              <button class="btn btn-outline-primary btn-upload" onclick="document.getElementById('getFile').click()">Pilih File .xlxs</button>
+              <input type='file' id="getFile" style="display:none">
+              </div>
+
+            </form>
+            </div>
+
+
+            <h4>Program Kampanye BPJS 2018</h4>
+
+            <p>Ungah data hasil pencapaian program</p>
+
+            <br>
+
+        </div>
+
+        <a href="index.html" class="btn-logout" title="Logout"><img src="assets/images/cancel.png"></a>
+
+      </div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>

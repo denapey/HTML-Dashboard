@@ -1,0 +1,192 @@
+.bg { 
+  background: url(../images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hidden {
+	display: none;
+}
+.bg-login {
+	width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg,#c850c0,#4158d0);
+    background: -o-linear-gradient(-135deg,#c850c0,#4158d0);
+    background: -moz-linear-gradient(-135deg,#c850c0,#4158d0);
+    background: linear-gradient(-135deg,#c850c0,#4158d0)
+}
+
+.wp-login {
+	background: #fff;
+    border-radius: 10px;
+    padding: 150px 70px;
+}
+
+.wp-upload {
+	background: #fff;
+    border-radius: 10px;
+    padding: 90px 40px;
+    margin-bottom: 50px;
+}
+.main-content {
+	margin-top: 70px;
+	padding: 0 50px;
+}
+.logo-login {
+	padding: 20px;
+}
+.icon-login {
+	text-align: center;
+	margin-bottom: 30px;
+}
+.form-login {
+	overflow: hidden;
+}
+.form-file {
+	width: 50%;
+    margin: 10px auto;
+}
+.icon-login img {
+	width: 80px;
+	display: block;
+    margin: 15px auto;
+}
+.icon-login span {
+	font-size: 18px;
+	font-weight: bold;
+}
+.next-btn img {
+	width: 35px;
+	margin-top: 10px;
+}
+
+.text-center {
+	text-align: center;
+}
+.text-center h1 {
+	margin: 20px 0;
+}
+.text-center h4 {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+.date {
+	margin: 30px auto;
+    width: 150px;
+}
+.wp-date-right {
+	display: inline-block;
+}
+.day {
+	font-size: 40px;
+	font-weight: bold;
+	display: inline-block;
+}
+.year {
+	display: block;
+	text-align: left;
+	font-size: 14px;
+}
+.month {
+	display: block;
+	text-align: left;
+	font-size: 14px;
+}
+.btn-logout {
+	margin: 5px auto;
+	text-align: center;
+}
+.btn-upload {
+	text-align: left;
+}
+.btn-logout img {
+	
+	width: 45px;
+}
+
+.report-card {
+	background: #fff;
+    border-radius: 8px;
+    padding: 14px;
+    
+}
+.report-sh {
+	border: 1px solid #e8e8e8;
+	-webkit-box-shadow: 1px 13px 24px -20px rgba(122,122,122,1);
+	-moz-box-shadow: 1px 13px 24px -20px rgba(122,122,122,1);
+	box-shadow: 1px 13px 24px -20px rgba(122,122,122,1);
+}
+.report-card h2 {
+	position: relative;
+	z-index: 2;
+}
+
+.report {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100px;
+  vertical-align: middle;
+  overflow: hidden;
+  margin-top: -35px;
+  z-index: 1;
+}
+
+.report svg {
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  left: -2px;
+  width: 105%;
+}
+
+.report path {
+  stroke-width: 6px;
+}
+
+.style1 {
+	background: rgb(248,252,251);
+	background: linear-gradient(0deg, rgba(248,252,251,1) 0%, rgba(204,239,233,1) 100%);
+}
+
+.style1 path {
+  stroke: #21b99f;
+}
+
+.style2 {
+	background: rgb(255,252,251);
+	background: linear-gradient(0deg, rgba(255,252,251,1) 0%, rgba(255,206,196,1) 100%);
+}
+
+.style2 path {
+  stroke: #ff591d;
+}
+
+.style3 {
+	background: rgb(255,254,250);
+	background: linear-gradient(0deg, rgba(255,254,250,1) 0%, rgba(254,232,190,1) 100%);
+}
+
+.style3 path {
+  stroke: #f2b900;
+}
+
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+
+.wp-chart {
+	margin: 30px 0;
+}
