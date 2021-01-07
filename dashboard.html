@@ -21,6 +21,8 @@
 
               <div class="d-flex">
 
+                <input type="text" name="date" class="form-control  datepicker">
+
                 <div class="dropdown">
 
                 <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -148,7 +150,67 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <script>
+
+    $(function() {
+      $('input[name="date"]').daterangepicker({
+        "locale": {
+          "format": "DD-MM-YYYY",
+        },
+        "startDate": "01/01/2021",
+        "endDate": "01/07/2021",
+        "minDate": "10/01/2019",
+        "maxDate": "10/01/2020",
+      }, function(start, end, label) {
+
+        var startDate = new Date( start.format('YYYY-MM-DD') );
+        var endDate = new Date( end.format('YYYY-MM-DD') );
+
+        // console.log(startDate);
+        // console.log(endDate);
+
+        var dataSales = product_data.data[0].data;
+        console.log(dataSales);
+
+        var resultProductData = dataSales.filter(function (a) {
+              var nDates = a[0] || {};              
+              var date = new Date(nDates);
+              console.log(date);
+              return (date >= startDate && date <= endDate);
+          });
+        console.log(resultProductData);
+
+        var i;
+        config.data.labels = [];
+        config.data.datasets[0].data = [];
+
+        for (i = 0; i < resultProductData.length; i++) {
+          
+          var lbl = resultProductData[i][0];
+          var val = resultProductData[i][1];
+
+          console.log(lbl);
+          console.log(val);
+
+          config.data.labels.push(lbl);
+          config.data.datasets[0].data.push(val);
+        }
+
+        console.log(config);
+
+        updateData();
+        
+
+      });
+    });
+
+    
+
 
     // Parse JSON 
     fetch('data/sales-overview.json')
@@ -160,7 +222,7 @@
 
         val = data.data;
         
-        console.log(val.today_sales);
+        // console.log(val.today_sales);
 
         // sales 
         document.getElementById("today_sales").innerHTML = 'Rp '+ FormatCur(val.today_sales);
@@ -211,25 +273,6 @@
       .catch((err) => {
         // Do something for an error here
       })
-
-      //date range
-      // var startDate = new Date("2015-08-04");
-      // var endDate = new Date("2015-08-12");
-
-      //   var resultProductData = product_data.filter(function (a) {
-      //       var hitDates = a.ProductHits || {};
-      //       // extract all date strings
-      //       hitDates = Object.keys(hitDates);
-      //       // improvement: use some. this is an improment because .map()
-      //       // and .filter() are walking through all elements.
-      //       // .some() stops this process if one item is found that returns true in the callback function and returns true for the whole expression
-      //       hitDateMatchExists = hitDates.some(function(dateStr) {
-      //           var date = new Date(dateStr);
-      //           return date >= startDate && date <= endDate
-      //       });
-      //       return hitDateMatchExists;
-      //   });
-      //   console.log(resultProductData);
 
       // -------
 
@@ -337,7 +380,7 @@
             first: 53,
             second: 43,
         }
-    ]
+    ];
 
 
     createSeries('first', 'The First');
@@ -449,9 +492,9 @@
     var config = {
       type: 'line',
       data: {
-        labels: ['14 Maret', '15 Maret', '16 Maret', '17 Maret', '18 Maret', '189aret', '20 Maret'],
+        labels: ['14 Maret', '15 Maret', '16 Maret', '17 Maret', '18 Maret', '19 Maret', '20 Maret'],
         datasets: [{
-          label: 'Unfilled',
+          label: 'CLIENT A',
           fill: true,
           backgroundColor: "rgba(240,247,255, 0.9)",
           borderColor: window.chartColors.blue,
@@ -464,20 +507,6 @@
             20,
             30
           ],
-        }, {
-          label: 'Filled',
-          backgroundColor: "rgba(243, 241, 229, 0.9)",
-          borderColor: '#f8bd4e',
-          data: [
-            20,
-            20,
-            30,
-            20,
-            40,
-            10,
-            20
-          ],
-          fill: true,
         }]
       },
       options: {
@@ -520,6 +549,14 @@
       var ctx = document.getElementById('canvas').getContext('2d');
       window.myLine = new Chart(ctx, config);
     };
+
+    function updateData() {
+      window.myLine.destroy();
+      var ctx = document.getElementById('canvas').getContext('2d');
+      window.myLine = new Chart(ctx, config);
+    }
+
+
   </script>
 
   </body>
