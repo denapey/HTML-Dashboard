@@ -169,10 +169,13 @@
       }, function(start, end, label) {
 
         var startDate = new Date( start.format('YYYY-MM-DD') );
+
+        startDate.setDate(startDate.getDate() - 1);
+
         var endDate = new Date( end.format('YYYY-MM-DD') );
 
-        // console.log(startDate);
-        // console.log(endDate);
+        console.log(startDate);
+        console.log(endDate);
 
         var dataSales = product_data.data[0].data;
         console.log(dataSales);
@@ -345,39 +348,40 @@
         return series;
     }
 
+
     chart.data = [
         {
-            category: 'Place #1',
+            category: '14 Maret',
             first: 40,
             second: 55,
         },
         {
-            category: 'Place #2',
+            category: '15 Maret',
             first: 30,
             second: 78,
         },
         {
-            category: 'Place #3',
+            category: '16 Maret',
             first: 27,
             second: 40,
         },
         {
-            category: 'Place #4',
+            category: '17 Maret',
             first: 20,
             second: 33,
         },
         {
-            category: 'Place #5',
+            category: '18 Maret',
             first: 50,
             second: 33,
         },
         {
-            category: 'Place #6',
+            category: '19 Maret',
             first: 60,
             second: 33,
         },
         {
-            category: 'Place #7',
+            category: '20 Maret',
             first: 53,
             second: 43,
         }
