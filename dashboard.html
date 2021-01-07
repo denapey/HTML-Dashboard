@@ -119,7 +119,7 @@
             <h5>Summary Report</h5>
 
             Total Sales
-            <div>Rp 1.300.000</div> <br>
+            <div id="today_sales2"></div> <br>
 
             Paid Order
             <div>10</div> <br>
@@ -226,6 +226,7 @@
 
         // sales 
         document.getElementById("today_sales").innerHTML = 'Rp '+ FormatCur(val.today_sales);
+        document.getElementById("today_sales2").innerHTML = 'Rp '+ FormatCur(val.today_sales);
         document.getElementById("order_paid").innerHTML = val.order_paid;
 
         // Cancel
