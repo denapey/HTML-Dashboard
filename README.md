@@ -1,2 +1,2 @@
-# tes
+# dashboard
 Simple html dashboard
